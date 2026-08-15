@@ -76,7 +76,7 @@
   <header>
     <div class="logo">🔊</div>
     <h1>dsh-sounds</h1>
-    <p class="sub">DeepSeek Harness 提示音 · 任务完成 / 失败 / 等待批准<br>点击按钮试听 👇</p>
+    <p class="sub">这是我给 <b>DeepSeek Harness</b>（一个 AI 编程助手）加的三段提示音<br>任务完成、任务失败、等待批准时，电脑会发出这些声音提醒我<br>点击下面的按钮就能试听 👇</p>
   </header>
 
   <div class="cards">
@@ -84,7 +84,7 @@
       <div class="icon">🎉</div>
       <div class="meta">
         <div class="name">任务完成 · 回合完成</div>
-        <div class="desc">叮咚叮咚叮咚 — 523 / 659 / 784Hz 上行三连音</div>
+        <div class="desc">叮咚叮咚叮咚 — 欢快的三连音，事情做完了的庆祝声</div>
       </div>
       <button class="btn btn-green" onclick="play('celebrate')">试听</button>
     </div>
@@ -93,7 +93,7 @@
       <div class="icon">❌</div>
       <div class="meta">
         <div class="name">任务失败 · 请求出错</div>
-        <div class="desc">嘟—— 170Hz 方波警示音</div>
+        <div class="desc">嘟—— 低沉警示音，提醒你"出问题了，看一眼"</div>
       </div>
       <button class="btn btn-red" onclick="play('error')">试听</button>
     </div>
@@ -102,20 +102,20 @@
       <div class="icon">⏳</div>
       <div class="meta">
         <div class="name">等待批准 · Agent 提问</div>
-        <div class="desc">叮 — 880Hz 轻柔短音</div>
+        <div class="desc">叮 — 轻轻一声，提示"需要你确认/回答"</div>
       </div>
       <button class="btn btn-amber" onclick="play('wait')">试听</button>
     </div>
 
-    <button class="btn btn-all" onclick="playAll()">▶ 全部播放</button>
+    <button class="btn btn-all" onclick="playAll()">▶ 三个一起听</button>
   </div>
 
   <p class="note">
-    声音由 <code>Web Audio</code> 实时合成，无音频文件 · 浏览器首次点击后才会发声（自动播放策略）
+    声音是浏览器现场合成的（Web Audio），没有音频文件 · 第一次点击后才会出声（浏览器规则）
   </p>
 
   <footer>
-    <a href="https://github.com/DNNCOVO/dsh-sounds">GitHub 仓库</a> · 插件源码与安装说明见 README
+    想自己用？看 <a href="https://github.com/DNNCOVO/dsh-sounds#-安装到-deepseek-harness">README 安装方法</a>
   </footer>
 </div>
 
