@@ -2,7 +2,7 @@
   "name": "harness-sounds",
   "version": "0.1.0",
   "type": "module",
-  "description": "DeepSeek Harness system sound alerts: task done/failed, turn complete, waiting for approval, agent questions (independent of any pet plugin)",
+  "description": "DeepSeek Harness sound alerts: task done/failed, turn complete, waiting for approval, agent questions",
   "keywords": [
     "deepseek-harness",
     "dsh",
