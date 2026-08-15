@@ -1,0 +1,10 @@
+# 依赖与构建产物说明
+node_modules/
+*.log
+
+# 本地构建缓存
+.dsh-plugin/client-bundle.js
+
+# 系统文件
+.DS_Store
+Thumbs.db

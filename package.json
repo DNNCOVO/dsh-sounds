@@ -1,0 +1,36 @@
+{
+  "name": "harness-sounds",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DeepSeek Harness system sound alerts: task done/failed, turn complete, waiting for approval, agent questions (independent of any pet plugin)",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "sound",
+    "notification",
+    "web-audio"
+  ],
+  "main": "./.dsh-plugin/index.mjs",
+  "exports": {
+    ".": "./.dsh-plugin/index.mjs",
+    "./client": "./.dsh-plugin/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "files": [
+    ".dsh-plugin",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ]
+}

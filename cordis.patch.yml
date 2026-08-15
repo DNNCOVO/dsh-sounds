@@ -1,0 +1,5 @@
+# harness-sounds bundle patch：向 web 组合挂载 harness-sounds（Node half 订阅官方事件，
+# SSE 推送；client half 由 __ModuleLoader__ 挂载播放提示音）。
+- insert:
+    - id: harness-sounds
+      name: harness-sounds
