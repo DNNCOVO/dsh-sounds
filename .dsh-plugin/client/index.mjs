@@ -1,5 +1,5 @@
 // harness-sounds client：DeepSeek Harness 提示音（Web Audio 合成，无音频文件依赖）。
-// 独立于 whale-girl：经 EventSource 订阅 /harness-sounds/events，收到事件即播放。
+// 经 EventSource 订阅 /harness-sounds/events，收到事件即播放。
 // 自动播放策略：首次 pointerdown/keydown 解锁 AudioContext（autoplay policy），
 // 解锁后页面在后台标签也能响（Firefox 后台 Web Audio 继续播放）。
 const EVENTS_PATH = '/harness-sounds/events'

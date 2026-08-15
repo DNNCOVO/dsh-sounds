@@ -1,9 +1,9 @@
-// harness-sounds Node half：DeepSeek Harness 自己的提示音服务（独立于 whale-girl 宠物）。
+// harness-sounds Node half：DeepSeek Harness 自己的提示音服务。
 // 设计：声音是 Harness 的「系统提示音」——任务完成/失败/请求错误/回合完成/等待批准
-// 由 host 事件驱动，经独立 SSE 端点推送；client 订阅后播放。不依赖 whale-girl：
+// 由 host 事件驱动，经独立 SSE 端点推送；client 订阅后播放。完全独立：
 // - 事件源直接订阅官方服务（jobs.onJobDone / agent/request-error / session/event）
-// - 独立端点 /harness-sounds/events（不读 whale-girl 的 /state，不订阅其事件）
-// 宠物是否显示/安装/动画是否正常，都不影响提示音。
+// - 独立端点 /harness-sounds/events，不依赖任何其他插件
+// 提示音不依赖任何界面元素是否显示/安装，事件发生即播放。
 import { parseTurnEvent } from './src/session-events.mjs'
 
 export const name = 'harness-sounds'
@@ -28,7 +28,7 @@ export function apply(ctx) {
   ctx.effect(() => {
     const disposers = [
       // 任务终态（官方 jobs 服务）：completed → 庆祝；failed → 失败音。
-      // killed（用户取消）中性：不发声（与 whale-girl 记账语义一致）。
+      // killed（用户取消）中性：不发声。
       ctx.jobs.onJobDone((snapshot) => {
         if (snapshot.status === 'completed') broadcast('celebrate')
         else if (snapshot.status === 'failed') broadcast('error')
