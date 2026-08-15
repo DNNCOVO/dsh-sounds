@@ -1,8 +1,8 @@
-# harness-sounds 🔊
+# dsh-sounds 🔊
 
-**DeepSeek Harness 系统提示音** — 任务完成/失败/回合完成/等待批准/提问时的声音提示。
+**DeepSeek Harness 系统提示音** — 任务完成 / 失败 / 回合完成 / 等待批准 / 提问时的声音提醒。
 
-一个独立的 [DeepSeek Harness](https://github.com/deepseek-ai/dsh) (DSH) 插件，**不依赖任何宠物插件**（如 whale-girl）——声音是 Harness 自己的"系统提示音"，由官方事件驱动，即使宠物未显示/未安装/动画异常，提示音照常播放。
+一个独立的 [DeepSeek Harness](https://github.com/deepseek-ai/dsh) (DSH) 插件，提供 Harness 自己的"系统提示音"，由官方事件驱动。
 
 ## ✨ 功能
 
@@ -63,7 +63,6 @@
 
 - **Host 端** (`.dsh-plugin/index.mjs`)：直接订阅官方服务事件（`jobs`、`session/event`、`agent/request-error`），通过独立的 SSE 端点 `/harness-sounds/events` 推送。
 - **Client 端** (`.dsh-plugin/client.js`)：用 `EventSource` 订阅，`Web Audio` 振荡器合成三种音效。
-- **完全独立**：不使用 whale-girl 的任何接口，不依赖其 `/state` 或事件流。
 
 ## 📁 项目结构
 
@@ -95,4 +94,3 @@ MIT © 2026
 ## 🙏 致谢
 
 - [DeepSeek Harness](https://github.com/deepseek-ai/dsh) — 本插件运行的平台
-- [vlln/whale-girl](https://github.com/vlln/whale-girl) — 桌宠设计参考（本插件与其完全解耦）
